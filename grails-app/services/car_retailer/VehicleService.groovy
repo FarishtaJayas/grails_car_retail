@@ -19,7 +19,16 @@ class VehicleService {
     }
 
     //update
-    def update()
+    def update(Vehicle vehicle, GrailsParameterMap params) {
+        vehicle.properties = params
+        if (vehicle.validate()) {
+            vehicle.save(flush: true)
+            if(!vehicle.hasErrors()) {
+                return true
+            }
+        }
+        return false
+    }
 
     }
 
