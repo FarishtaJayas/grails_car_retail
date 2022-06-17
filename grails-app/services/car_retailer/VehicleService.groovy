@@ -15,7 +15,7 @@ class VehicleService {
                 return true
             }
         }
-        return  false
+        return false
     }
 
     //update
@@ -23,12 +23,33 @@ class VehicleService {
         vehicle.properties = params
         if (vehicle.validate()) {
             vehicle.save(flush: true)
-            if(!vehicle.hasErrors()) {
+            if (!vehicle.hasErrors()) {
                 return true
             }
         }
         return false
     }
+
+    def getById(Serializable id) {
+        return vehicle.get(id)
+    }
+
+    def list(GrailsParameterMap params) {
+        params.max = params.max ?: GlobalConfig.itemsPerPage()
+        List<Vehicle> vehicleList = Vehicle.createCriteria().list(params) {
+            if (params?.colName && params?.colValue) {
+                like(params.colName, "%" + params.colValue + "%")
+            }
+            if (!params.sort) {
+                order("id", "desc")
+            }
+        }
+        return [list: vehicleList, count: vehicleList.totalCount]
+    }
+
+
+
+
 
     }
 
