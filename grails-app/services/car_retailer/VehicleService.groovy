@@ -40,6 +40,7 @@ class VehicleService {
             if (params?.colName && params?.colValue) {
                 like(params.colName, "%" + params.colValue + "%")
             }
+            //if there is no sorting
             if (!params.sort) {
                 order("id", "desc")
             }
@@ -47,7 +48,16 @@ class VehicleService {
         return [list: vehicleList, count: vehicleList.totalCount]
     }
 
+    def delete(Vehicle vehicle) {
+        try {
+            delete(flush: true)
+        }  catch (Exception e) {
+            println("Vehicle could not be deleted")
+            return false
 
+        }
+        return true
+    }
 
 
 
