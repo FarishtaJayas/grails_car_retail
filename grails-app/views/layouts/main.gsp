@@ -17,7 +17,7 @@
 <body>
 
 <header>
-    <nav class="navbar navbar-expand-lg navbar-success fixed-top bg-success rounded">
+    <nav class="navbar navbar-expand-lg navbar-success fixed-top bg-info rounded">
         <a class="navbar-brand" href="#">Car Retailer</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
                 data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
@@ -34,9 +34,9 @@
 
         <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
             <ul class="list-group">
-                <li class="list-group-item"><a href="#">Dashboard</a></li>
-                <li class="list-group-item"><a href="#">Contact</a></li>
-                <li class="list-group-item"><a href="#">Contact Group</a></li>
+                <li class="list-group-item"><a href="#">Owners</a></li>
+                <li class="list-group-item"><a href="#">Cars</a></li>
+                <li class="list-group-item bg-danger"><a style="color: white" href="#">Logout</a></li>
             </ul>
         </nav>
 
