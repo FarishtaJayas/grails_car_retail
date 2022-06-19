@@ -5,7 +5,7 @@ class ManagerController {
     ManagerService managerService
     def index() {
         def response = managerService.list(params)
-        [manager:response.list, total:response.count]
+        [managerList:response.list, total:response.count]
     }
 
     def details(Integer id) {
@@ -37,7 +37,7 @@ class ManagerController {
         } else {
             def response = managerService.getById(id)
             if(!response){
-                redirect(controller: "manager", action: "index")
+                redirect(controller: "manager", action: "create")
             } else {
                 [manager: response]
             }
@@ -46,14 +46,17 @@ class ManagerController {
 
     def update() {
         def response = managerService.getById(params.id)
-        if(!response){
+        if (!response) {
+            flash.message = AppUtil.infoMessage("Invalid Entity", false)
             redirect(controller: "manager", action: "index")
-        }else{
+        } else {
             response = managerService.update(response, params)
-            if(!response.isSuccess){
+            if (!response.isSuccess) {
                 flash.redirectParams = response.model
+                flash.message = AppUtil.infoMessage("Unable to update", false)
                 redirect(controller: "manager", action: "edit")
-            }else{
+            } else {
+                flash.message = AppUtil.infoMessage("Updated")
                 redirect(controller: "manager", action: "index")
             }
         }

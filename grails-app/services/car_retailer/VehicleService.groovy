@@ -1,6 +1,5 @@
 package car_retailer
 
-import grails.gorm.transactions.Transactional
 import grails.web.servlet.mvc.GrailsParameterMap
 
 

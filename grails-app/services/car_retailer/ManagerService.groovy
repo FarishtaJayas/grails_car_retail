@@ -1,13 +1,13 @@
 package car_retailer
-
+import grails.gorm.transactions.Transactional
 import grails.web.servlet.mvc.GrailsParameterMap
 
-
+@Transactional
 class ManagerService {
 
     def save(GrailsParameterMap params) {
         Manager manager = new Manager(params)
-        def response = AppUtil.saveResponse(isSuccess: false, manager)
+        def response = AppUtil.saveResponse(false, manager)
         if(manager.validate()) {
             manager.save(flush: true)
             if (!manager.hasErrors()) {
@@ -19,10 +19,10 @@ class ManagerService {
 
     def update(Manager manager, GrailsParameterMap params) {
         manager.properties = params
-        def response = AppUtil.saveResponse( isSuccess: false, manager)
-        if(manager.validate()) {
-            manager.save(flush:true)
-            if(!manager.hasErrors()){
+        def response = AppUtil.saveResponse(false, manager)
+        if (manager.validate()) {
+            manager.save(flush: true)
+            if (!manager.hasErrors()){
                 response.isSuccess = true
             }
         }
@@ -40,10 +40,10 @@ class ManagerService {
                 like(params.colName, "%" +params.colValue + "%^")
             }
             if(!params.sort()) {
-                order(propertyName: "id", direction: "desc")
+                order("id", "desc")
             }
         }
-        return [List: managerList, count: managerList.size()]
+        return [list: managerList, count: managerList.size()]
     }
 
     def delete(Manager manager){

@@ -1,5 +1,6 @@
 package car_retailer
 
+
 class GlobalConfig {
 
     public static final def USER_TYPE = [
