@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>
-        <g:layoutTitle default="Grails"/>
+        <g:layoutTitle default="Car Retailer"/>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
@@ -16,29 +16,36 @@
 
 <body>
 
-<div class="h-100 d-flex align-items-center justify-content-center centered">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-success fixed-top bg-success rounded">
+        <a class="navbar-brand" href="#">Car Retailer</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+</header>
+
+
 <div class="container-fluid">
-    <ul class="nav flex-column">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Customer Tracking</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Add Owner</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Add Car</a>
-        </li>
-%{--        <li class="nav-item">--}%
-%{--            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>--}%
-%{--        </li>--}%
-    </ul>
+    <div class="row">
 
 
+        <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+            <ul class="list-group">
+                <li class="list-group-item"><a href="#">Dashboard</a></li>
+                <li class="list-group-item"><a href="#">Contact</a></li>
+                <li class="list-group-item"><a href="#">Contact Group</a></li>
+            </ul>
+        </nav>
 
 
-<main>
-<g:layoutBody/>
-</main>
+        <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+            <g:layoutBody/>
+        </main>
+    </div>
+</div>
 
 </div>
 </div>
