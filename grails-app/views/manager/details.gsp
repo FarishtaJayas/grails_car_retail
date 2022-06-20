@@ -25,7 +25,7 @@
                     <th class="text-right"><g:message code="email"/></th><td class="text-left">${manager.email}</td>
                 </tr>
                 <tr>
-                    <th class="text-right"><g:message code="user.type"/></th><td class="text-left">${manager.usertype}</td>
+                    <th class="text-right"><g:message code="sales.made"/></th><td class="text-left">${manager.salesMade}</td>
                 </tr>
             </table>
         </g:if>

@@ -1,4 +1,4 @@
-package car_retailer
+package grails
 
 class UrlMappings {
 
@@ -9,7 +9,7 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
+        "/"(controller: "manager", action: "index")
         "500"(view:'/error')
         "404"(view:'/notFound')
     }

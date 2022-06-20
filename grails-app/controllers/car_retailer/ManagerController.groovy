@@ -1,5 +1,8 @@
 package car_retailer
 
+import grails.plugin.springsecurity.annotation.Secured
+
+@Secured(['ROLE_ADMIN', 'ROLE_USER'])
 class ManagerController {
 
     ManagerService managerService

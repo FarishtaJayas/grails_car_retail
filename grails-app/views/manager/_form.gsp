@@ -1,21 +1,15 @@
 <div class="form-group">
-    <label><g:message code="first.name"/> *</label>
-    <g:textField name="firstName" class="form-control" value="${manager?.firstName}" placeholder="Enter First name"/>
-</div>
+    <label>First Name *</label>
+    <g:textField name="firstName" class="form-control" value="${manager?.firstName}" placeholder="Enter the Manager's First name"/>
 
-<div class="form-group">
-    <label><g:message code="last.name"/></label>
-    <g:textField name="lastName" class="form-control" value="${manger?.lastName}" placeholder="Enter last name"/>
-</div>
+    <label>Last Name </label>
+    <g:textField name="lastName" class="form-control" value="${manager?.lastName}" placeholder="Enter the Manager's Name"/>
 
-<div class="form-group">
-    <label><g:message code="email.address"/> *</label>
-    <g:field type="email" name="email" class="form-control" value="${manager?.email}" placeholder="Enter email"/>
-</div>
+    <label>Email *</label>
+    <g:textField name="email" class="form-control" value="${manager?.email}" placeholder="Enter the Manager's Name"/>
 
-<g:if test="${!edit}">
-    <div class="form-group">
-        <label><g:message code="password"/> *</label>
-        <g:passwordField name="password" class="form-control" value="${manager?.password}" placeholder="Enter password"/>
-    </div>
-</g:if>
+    <label>No. of sales</label>
+    <g:textField name="salesMade" class="form-control" value="${manager?.salesMade}" placeholder="No. of sales"/>
+
+
+</div>
