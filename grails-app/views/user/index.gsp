@@ -9,9 +9,7 @@
 
             <div class="btn-group">
                 <g:link controller="user" action="create" class="btn btn-success">Create</g:link>
-                <g:form controller="logout">
-                    <g:submitButton class="btn btn-danger" name="Submit" value="Logout" />
-                </g:form>
+
             </div>
         </span>
     </div>
@@ -19,7 +17,7 @@
     %{--Table Panel--}%
     <div class="card-body">
         <table class="table table-bordered">
-            <thead class="thead-dark">
+            <thead class="thead-light">
             <tr>
                 <td>First Name</td>
                 <td>Last Name</td>
@@ -38,7 +36,7 @@
                     %{--Table Actions --}%
                     <td>
                         <div class="btn-group">
-                            <g:link controller="user" action="details" class="btn btn-secondary" id="${info.id}">Details</g:link>
+                            <g:link controller="user" action="details" class="btn btn-secondary" id="${info.id}">Managers</g:link>
                             <g:link controller="user" action="edit" class="btn btn-secondary" id="${info.id}">Edit</g:link>
                             <g:link controller="user" action="delete" id="${info.id}"
                                     class="btn btn-secondary delete-confirmation">Delete</g:link>

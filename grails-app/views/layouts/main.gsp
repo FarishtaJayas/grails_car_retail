@@ -24,6 +24,10 @@
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <g:form controller="logout">
+            <g:submitButton class="btn btn-danger" name="Submit" value="Logout" />
+        </g:form>
     </nav>
 </header>
 
